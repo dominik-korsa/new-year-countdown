@@ -54,7 +54,7 @@ body {
 
 #countdown #time-left-hours {
   font-family: 'Roboto Mono', monospace;
-  font-size: 75px;
+  font-size: 125px;
   color: #fff;
   font-weight: 100;
 }
@@ -63,9 +63,15 @@ body {
   font-weight: 400;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 600px) {
   #countdown #time-left-hours {
-    font-size: 60px;
+    font-size: 80px;
+  }
+}
+
+@media (max-width: 400px) {
+  #countdown #time-left-hours {
+    font-size: 65px;
   }
 }
 
@@ -129,4 +135,16 @@ body {
 
 #new-year:not(.active) {
   display: none;
+}
+
+@media (max-width: 750px) {
+  #new-year .year {
+    font-size: 200px;
+  }
+}
+
+@media (max-width: 450px) {
+  #new-year .year {
+    font-size: 125px;
+  }
 }
