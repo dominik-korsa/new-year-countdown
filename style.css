@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono:100,300,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:100,300,400,500,700|Roboto:100,300,400,500,700,900');
 
 body {
   background-color: #333;
@@ -109,5 +109,24 @@ body {
 }
 
 #countdown:not(.active) {
+  display: none;
+}
+
+#new-year {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#new-year .year {
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 300px;
+  font-weight: 200;
+}
+
+#new-year:not(.active) {
   display: none;
 }
