@@ -108,6 +108,8 @@ function update() {
       styleIndex = 2;
       document.documentElement.dataset.style = styles[styleIndex];
     }
+
+    document.title = 'New Year 🎉 | New Year Countdown';
   } else {
     countdown.classList.add('active');
     newYear.classList.remove('active');
