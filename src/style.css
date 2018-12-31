@@ -19,6 +19,10 @@ html[data-style="amoled"] {
   --color-active: #eee4;
 }
 
+html.hide-cursor {
+  cursor: none;
+}
+
 body {
   background-color: var(--background);
   transition: background-color 500ms;
