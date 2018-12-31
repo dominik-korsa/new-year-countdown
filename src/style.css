@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:100,300,400,500,700|Roboto:100,300,400,500,700,900');
 
+html {
+  --background: #fff;
+  --color: #333;
+}
+
 body {
-  background-color: #333;
+  background-color: var(--background);
   margin: 0;
   overflow: hidden;
 }
@@ -15,7 +20,7 @@ body {
 }
 
 #loading h1 {
-  color: #fff;
+  color: var(--color);
   font-family: 'Roboto', sans-serif;
   font-size: 45px;
 }
@@ -55,7 +60,7 @@ body {
 #countdown #time-left-hours {
   font-family: 'Roboto Mono', monospace;
   font-size: 125px;
-  color: #fff;
+  color: var(--color);
   font-weight: 100;
 }
 
@@ -78,7 +83,7 @@ body {
 #countdown #time-left-minutes {
   font-family: 'Roboto Mono', monospace;
   font-size: 90px;
-  color: #fff;
+  color: var(--color);
   font-weight: 200;
 }
 
@@ -95,7 +100,7 @@ body {
 #countdown #time-left-seconds {
   font-family: 'Roboto Mono', monospace;
   font-size: 400px;
-  color: #fff;
+  color: var(--color);
 }
 
 @media (max-width: 600px) {
@@ -127,7 +132,7 @@ body {
 }
 
 #new-year .year {
-  color: #fff;
+  color: var(--color);
   font-family: 'Roboto', sans-serif;
   font-size: 300px;
   font-weight: 200;
