@@ -1,4 +1,9 @@
 const previousYearPeriod = 14;
+const styles = ['dark', 'light', 'amoled'];
+
+// Elements
+
+let styleButton;
 
 let loading;
 
@@ -19,7 +24,10 @@ let timeLeftSecondsSeconds;
 let newYear;
 let newYearYear;
 
+// Global variables
+
 let year;
+let styleIndex = 0;
 
 function getTargetYear() {
   const now = new Date();
@@ -27,6 +35,15 @@ function getTargetYear() {
   const targetYearDate = new Date(oneYearAhead - previousYearPeriod * 86400000);
   const targetYear = targetYearDate.getFullYear();
   return targetYear;
+}
+
+function styleButtonClick() {
+  this.blur();
+
+  styleIndex++;
+  styleIndex %= styles.length;
+
+  document.documentElement.dataset.style = styles[styleIndex];
 }
 
 function update() {
@@ -74,6 +91,10 @@ function update() {
 }
 
 function setup() {
+  styleButton = document.getElementById('style');
+
+  styleButton.addEventListener('click', styleButtonClick);
+
   loading = document.getElementById('loading');
 
   countdown = document.getElementById('countdown');
