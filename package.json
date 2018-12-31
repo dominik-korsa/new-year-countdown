@@ -1,0 +1,30 @@
+{
+  "name": "new-year-countdown",
+  "version": "1.0.0",
+  "description": "Countdown to the New Year",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "./node_modules/.bin/eslint ./",
+    "lint-fix": "./node_modules/.bin/eslint ./ --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dominik-korsa/new-year-countdown.git"
+  },
+  "keywords": [
+    "Countdown",
+    "New Year"
+  ],
+  "author": "Dominik Korsa <dominik.korsa@gmail.com> (https://github.com/dominik-korsa/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dominik-korsa/new-year-countdown/issues"
+  },
+  "homepage": "https://github.com/dominik-korsa/new-year-countdown#readme",
+  "devDependencies": {
+    "eslint": "^5.11.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  }
+}
