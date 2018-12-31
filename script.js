@@ -29,6 +29,7 @@ let newYearYear;
 
 let year;
 let styleIndex = 0;
+let mouseMoveTimeoutId = null;
 
 function getTargetYear() {
   const now = new Date();
@@ -77,6 +78,16 @@ function fullscreenChanged() {
   } else {
     fullscreenButton.classList.add('active');
   }
+}
+
+function mouseMoveTimeout() {
+  document.documentElement.classList.add('hide-cursor');
+}
+
+function mouseMove() {
+  clearTimeout(mouseMoveTimeoutId);
+  document.documentElement.classList.remove('hide-cursor');
+  mouseMoveTimeoutId = setTimeout(mouseMoveTimeout, 5000);
 }
 
 function update() {
@@ -162,6 +173,8 @@ function setup() {
 
   newYear = document.getElementById('new-year');
   [newYearYear] = newYear.getElementsByClassName('year');
+
+  document.addEventListener('mousemove', mouseMove);
 
   year = getTargetYear();
   console.log(`Target year: ${year}`);
