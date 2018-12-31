@@ -1,8 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:100,300,400,500,700|Roboto:100,300,400,500,700,900');
 
 html {
+  --background: #222;
+  --color: #fff;
+}
+
+html[data-style="light"] {
   --background: #fff;
   --color: #333;
+}
+
+html[data-style="amoled"] {
+  --background: #000;
+  --color: #eee;
 }
 
 body {
