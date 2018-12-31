@@ -54,6 +54,10 @@ body {
   background-color: var(--color-active);
 }
 
+#fullscreen:not(.active) {
+  display: none;
+}
+
 #loading {
   width: 100vw;
   height: 100vh;
