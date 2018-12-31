@@ -7,5 +7,9 @@
     "no-console": "off",
     "no-plusplus": "off",
     "no-shadow": "warn"
+  },
+  "env": {
+    "browser": true,
+    "node": true
   }
 }
