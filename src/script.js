@@ -196,7 +196,7 @@ function setup() {
     setInterval(update, 1000);
     update();
     loading.classList.remove('active');
-  }, 1000 - now.getMilliseconds());
+  }, 1000 - now.getMilliseconds() + 50);
 }
 
 document.addEventListener('DOMContentLoaded', setup);
