@@ -4,6 +4,7 @@ const styles = ['dark', 'light', 'amoled'];
 // Elements
 
 let styleButton;
+let fullscreenButton;
 
 let loading;
 
@@ -44,6 +45,38 @@ function styleButtonClick() {
   styleIndex %= styles.length;
 
   document.documentElement.dataset.style = styles[styleIndex];
+}
+
+function fullscreenButtonClick() {
+  this.blur();
+
+  const element = document.documentElement;
+
+  if (element.requestFullscreen) {
+    element.requestFullscreen();
+  } else if (element.webkitRequestFullscreen) {
+    element.webkitRequestFullscreen();
+  } else if (element.mozRequestFullScreen) {
+    element.mozRequestFullScreen();
+  } else if (element.msRequestFullscreen) {
+    element.msRequestFullscreen();
+  } else {
+    console.warn('Fullscreen failed');
+    fullscreenButton.classList.add('remove');
+  }
+}
+
+function fullscreenChanged() {
+  const fullscreenElement = document.fullscreenElement
+    || document.webkitFullscreenElement
+    || document.mozFullScreenElement
+    || document.msFullscreenElement;
+
+  if (fullscreenElement) {
+    fullscreenButton.classList.remove('active');
+  } else {
+    fullscreenButton.classList.add('active');
+  }
 }
 
 function update() {
@@ -92,8 +125,24 @@ function update() {
 
 function setup() {
   styleButton = document.getElementById('style');
-
   styleButton.addEventListener('click', styleButtonClick);
+
+  fullscreenButton = document.getElementById('fullscreen');
+  fullscreenButton.addEventListener('click', fullscreenButtonClick);
+
+  const fullscreenEnabled = document.fullscreenEnabled
+    || document.webkitFullscreenEnabled
+    || document.mozFullScreenEnabled
+    || document.msFullscreenEnabled;
+
+  if (fullscreenEnabled) {
+    fullscreenButton.classList.add('active');
+  }
+
+  document.addEventListener('fullscreenchange', fullscreenChanged);
+  document.addEventListener('webkitfullscreenchange', fullscreenChanged);
+  document.addEventListener('mozfullscreenchange', fullscreenChanged);
+  document.addEventListener('MSFullscreenChange', fullscreenChanged);
 
   loading = document.getElementById('loading');
 
