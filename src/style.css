@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono');
+
+body {
+  background-color: #333;
+  margin: 0;
+  overflow: hidden;
+}
+
+#loading {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#loading h1 {
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 45px;
+}
+
+#loading h1::after {
+  content: "";
+  animation: loading-dots 2000ms infinite linear;
+}
+
+#loading:not(.active) {
+  display: none;
+}
+
+@keyframes loading-dots {
+  0% {
+    content: "";
+  }
+  25% {
+    content: ".";
+  }
+  50% {
+    content: "..";
+  }
+  75% {
+    content: "...";
+  }
+}
