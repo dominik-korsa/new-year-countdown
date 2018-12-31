@@ -108,6 +108,8 @@ function update() {
       styleIndex = 2;
       document.documentElement.dataset.style = styles[styleIndex];
     }
+
+    document.title = 'New Year 🎉 | New Year Countdown';
   } else {
     countdown.classList.add('active');
     newYear.classList.remove('active');
@@ -126,6 +128,10 @@ function update() {
         .toLocaleString(undefined, { minimumIntegerDigits: 2 });
       timeLeftHoursSeconds.innerText = seconds
         .toLocaleString(undefined, { minimumIntegerDigits: 2 });
+
+      document.title = `${hours} ${hours !== 1 ? 'hours' : 'hour'}`
+        + ` ${minutes} ${minutes !== 1 ? 'minutes' : 'minute'}`
+        + ' | New Year Countdown';
     } else if (remaining >= 60000) { // 1 minute
       timeLeftHours.classList.remove('active');
       timeLeftMinutes.classList.add('active');
@@ -134,12 +140,19 @@ function update() {
       timeLeftMinutesMinutes.innerText = minutes;
       timeLeftMinutesSeconds.innerText = seconds
         .toLocaleString(undefined, { minimumIntegerDigits: 2 });
+
+      document.title = `${minutes} ${minutes !== 1 ? 'minutes' : 'minute'}`
+        + ` ${seconds} ${seconds !== 1 ? 'seconds' : 'second'}`
+        + ' | New Year Countdown';
     } else {
       timeLeftHours.classList.remove('active');
       timeLeftMinutes.classList.remove('active');
       timeLeftSeconds.classList.add('active');
 
       timeLeftSecondsSeconds.innerText = seconds;
+
+      document.title = `${seconds} ${seconds !== 1 ? 'seconds' : 'second'}`
+        + ' | New Year Countdown';
     }
   }
 }
