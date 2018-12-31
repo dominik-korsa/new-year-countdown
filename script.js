@@ -45,6 +45,11 @@ function styleButtonClick() {
   styleIndex++;
   styleIndex %= styles.length;
 
+  if (newYear.classList.contains('active') && styles[styleIndex] === 'light') {
+    styleIndex++;
+    styleIndex %= styles.length;
+  }
+
   document.documentElement.dataset.style = styles[styleIndex];
 }
 
@@ -98,6 +103,11 @@ function update() {
   if (remaining <= 0) {
     countdown.classList.remove('active');
     newYear.classList.add('active');
+
+    if (styles[styleIndex] === 'light') {
+      styleIndex = 2;
+      document.documentElement.dataset.style = styles[styleIndex];
+    }
   } else {
     countdown.classList.add('active');
     newYear.classList.remove('active');
