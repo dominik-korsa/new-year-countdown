@@ -21,6 +21,7 @@ html[data-style="amoled"] {
 
 body {
   background-color: var(--background);
+  transition: background-color 500ms;
   margin: 0;
   overflow: hidden;
 }
@@ -63,6 +64,7 @@ body {
 
 #loading h1 {
   color: var(--color);
+  transition: color 500ms;
   font-family: 'Roboto', sans-serif;
   font-size: 45px;
 }
@@ -103,6 +105,7 @@ body {
   font-family: 'Roboto Mono', monospace;
   font-size: 125px;
   color: var(--color);
+  transition: color 500ms;
   font-weight: 100;
 }
 
@@ -126,6 +129,7 @@ body {
   font-family: 'Roboto Mono', monospace;
   font-size: 90px;
   color: var(--color);
+  transition: color 500ms;
   font-weight: 200;
 }
 
@@ -143,6 +147,7 @@ body {
   font-family: 'Roboto Mono', monospace;
   font-size: 400px;
   color: var(--color);
+  transition: color 500ms;
 }
 
 @media (max-width: 600px) {
@@ -175,6 +180,7 @@ body {
 
 #new-year .year {
   color: var(--color);
+  transition: color 500ms;
   font-family: 'Roboto', sans-serif;
   font-size: 300px;
   font-weight: 200;
