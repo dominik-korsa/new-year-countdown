@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono');
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono:100,300,400,500,700');
 
 body {
   background-color: #333;
@@ -42,4 +42,72 @@ body {
   75% {
     content: "...";
   }
+}
+
+#countdown {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+#countdown #time-left-hours {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 75px;
+  color: #fff;
+  font-weight: 100;
+}
+
+#countdown #time-left-hours .hours, #countdown #time-left-hours .minutes {
+  font-weight: 400;
+}
+
+@media (max-width: 450px) {
+  #countdown #time-left-hours {
+    font-size: 60px;
+  }
+}
+
+#countdown #time-left-minutes {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 90px;
+  color: #fff;
+  font-weight: 200;
+}
+
+#countdown #time-left-minutes .minutes {
+  font-weight: 400;
+}
+
+@media (max-width: 350px) {
+  #countdown #time-left-minutes {
+    font-size: 75px;
+  }
+}
+
+#countdown #time-left-seconds {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 400px;
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  #countdown #time-left-seconds {
+    font-size: 300px;
+  }
+}
+
+@media (max-width: 450px) {
+  #countdown #time-left-seconds {
+    font-size: 200px;
+  }
+}
+
+#countdown .time-left:not(.active) {
+  display: none;
+}
+
+#countdown:not(.active) {
+  display: none;
 }
