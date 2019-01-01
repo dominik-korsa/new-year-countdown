@@ -253,11 +253,6 @@ Firework.prototype.draw = function draw() {
   ctx.lineTo(this.x, this.y);
   ctx.strokeStyle = `hsl(${hue}, 100%, ${this.brightness}%)`;
   ctx.stroke();
-
-  ctx.beginPath();
-  // draw the target for this firework with a pulsing circle
-  ctx.arc(this.tx, this.ty, this.targetRadius, 0, Math.PI * 2);
-  ctx.stroke();
 };
 
 // once the window loads, we are ready for some fireworks!
