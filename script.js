@@ -10,6 +10,12 @@ let loading;
 
 let countdown;
 
+let timeLeftDays;
+let timeLeftDaysDays;
+let timeLeftDaysHours;
+let timeLeftDaysMinutes;
+let timeLeftDaysSeconds;
+
 let timeLeftHours;
 let timeLeftHoursHours;
 let timeLeftHoursMinutes;
@@ -114,11 +120,30 @@ function update() {
     countdown.classList.add('active');
     newYear.classList.remove('active');
 
-    const hours = Math.floor(remaining / 3600000);
+    const days = Math.floor(remaining / 86400000);
+    const hours = Math.floor((remaining % 86400000) / 3600000);
     const minutes = Math.floor((remaining % 3600000) / 60000);
     const seconds = Math.floor((remaining % 60000) / 1000);
 
-    if (remaining >= 3600000) { // 1 hour
+    if (remaining >= 86400000) { // 1 day
+      timeLeftDays.classList.add('active');
+      timeLeftHours.classList.remove('active');
+      timeLeftMinutes.classList.remove('active');
+      timeLeftSeconds.classList.remove('active');
+
+      timeLeftDaysDays.innerText = days;
+      timeLeftDaysHours.innerText = hours;
+      timeLeftDaysMinutes.innerText = minutes
+        .toLocaleString(undefined, { minimumIntegerDigits: 2 });
+      timeLeftDaysSeconds.innerText = seconds
+        .toLocaleString(undefined, { minimumIntegerDigits: 2 });
+
+      document.title = `${days} ${days !== 1 ? 'days' : 'day'}`
+        + ` ${hours} ${hours !== 1 ? 'hours' : 'hour'}`
+        + ` ${minutes} ${minutes !== 1 ? 'minutes' : 'minute'}`
+        + ' | New Year Countdown';
+    } else if (remaining >= 3600000) { // 1 hour
+      timeLeftDays.classList.remove('active');
       timeLeftHours.classList.add('active');
       timeLeftMinutes.classList.remove('active');
       timeLeftSeconds.classList.remove('active');
@@ -133,6 +158,7 @@ function update() {
         + ` ${minutes} ${minutes !== 1 ? 'minutes' : 'minute'}`
         + ' | New Year Countdown';
     } else if (remaining >= 60000) { // 1 minute
+      timeLeftDays.classList.remove('active');
       timeLeftHours.classList.remove('active');
       timeLeftMinutes.classList.add('active');
       timeLeftSeconds.classList.remove('active');
@@ -145,6 +171,7 @@ function update() {
         + ` ${seconds} ${seconds !== 1 ? 'seconds' : 'second'}`
         + ' | New Year Countdown';
     } else {
+      timeLeftDays.classList.remove('active');
       timeLeftHours.classList.remove('active');
       timeLeftMinutes.classList.remove('active');
       timeLeftSeconds.classList.add('active');
@@ -181,6 +208,12 @@ function setup() {
   loading = document.getElementById('loading');
 
   countdown = document.getElementById('countdown');
+
+  timeLeftDays = document.getElementById('time-left-days');
+  [timeLeftDaysDays] = timeLeftDays.getElementsByClassName('days');
+  [timeLeftDaysHours] = timeLeftDays.getElementsByClassName('hours');
+  [timeLeftDaysMinutes] = timeLeftDays.getElementsByClassName('minutes');
+  [timeLeftDaysSeconds] = timeLeftDays.getElementsByClassName('seconds');
 
   timeLeftHours = document.getElementById('time-left-hours');
   [timeLeftHoursHours] = timeLeftHours.getElementsByClassName('hours');
