@@ -120,7 +120,7 @@ function update() {
     countdown.classList.add('active');
     newYear.classList.remove('active');
 
-    const days = Math.floor(remaining / 86400000)
+    const days = Math.floor(remaining / 86400000);
     const hours = Math.floor((remaining % 86400000) / 3600000);
     const minutes = Math.floor((remaining % 3600000) / 60000);
     const seconds = Math.floor((remaining % 60000) / 1000);
