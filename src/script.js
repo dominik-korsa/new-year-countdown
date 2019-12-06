@@ -132,7 +132,8 @@ function update() {
       timeLeftSeconds.classList.remove('active');
 
       timeLeftDaysDays.innerText = days;
-      timeLeftDaysHours.innerText = hours;
+      timeLeftDaysHours.innerText = hours
+        .toLocaleString(undefined, { minimumIntegerDigits: 2 });
       timeLeftDaysMinutes.innerText = minutes
         .toLocaleString(undefined, { minimumIntegerDigits: 2 });
       timeLeftDaysSeconds.innerText = seconds
