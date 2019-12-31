@@ -186,7 +186,7 @@ body {
 
 #countdown #time-left-minutes {
   font-family: 'Roboto Mono', monospace;
-  font-size: 90px;
+  font-size: 160px;
   color: var(--color);
   transition: color 500ms;
   font-weight: 200;
@@ -196,9 +196,27 @@ body {
   font-weight: 400;
 }
 
-@media (max-width: 350px) {
+@media (max-width: 800px) {
+  #countdown #time-left-minutes {
+    font-size: 120px;
+  }
+}
+
+@media (max-width: 550px) {
+  #countdown #time-left-minutes {
+    font-size: 90px;
+  }
+}
+
+@media (max-width: 400px) {
   #countdown #time-left-minutes {
     font-size: 75px;
+  }
+}
+
+@media (max-width: 300px) {
+  #countdown #time-left-minutes {
+    font-size: 60px;
   }
 }
 
