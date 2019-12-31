@@ -109,6 +109,57 @@ body {
   justify-content: center;
 }
 
+#countdown #time-left-days {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 125px;
+  line-height: 150px;
+  color: var(--color);
+  transition: color 500ms;
+  font-weight: 100;
+}
+
+#countdown #time-left-days .days, #countdown #time-left-days .hours {
+  font-weight: 400;
+}
+
+#countdown #time-left-days .minutes, #countdown #time-left-days .seconds,
+#countdown #time-left-days .hours-minutes-separator, #countdown #time-left-days .minutes-seconds-separator {
+  font-size: 90px;
+}
+
+@media (max-width: 800px) {
+  #countdown #time-left-days {
+    font-size: 80px;
+  }
+
+  #countdown #time-left-days .minutes, #countdown #time-left-days .seconds,
+  #countdown #time-left-days .hours-minutes-separator, #countdown #time-left-days .minutes-seconds-separator {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 600px) {
+  #countdown #time-left-days {
+    font-size: 60px;
+  }
+
+  #countdown #time-left-days .minutes, #countdown #time-left-days .seconds,
+  #countdown #time-left-days .hours-minutes-separator, #countdown #time-left-days .minutes-seconds-separator {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 400px) {
+  #countdown #time-left-days {
+    font-size: 50px;
+  }
+
+  #countdown #time-left-days .minutes, #countdown #time-left-days .seconds,
+  #countdown #time-left-days .hours-minutes-separator, #countdown #time-left-days .minutes-seconds-separator {
+    font-size: 30px;
+  }
+}
+
 #countdown #time-left-hours {
   font-family: 'Roboto Mono', monospace;
   font-size: 125px;
